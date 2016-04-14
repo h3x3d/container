@@ -4,7 +4,8 @@
   "description": "Simple DI container",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "babel -d lib/ src/"
   },
   "author": "",
   "license": "ISC",
@@ -19,8 +20,10 @@
   "devDependencies": {
   	"eslint-config-h3x3d": "h3x3d/eslint-config-h3x3d",
     "eslint": "^2.7.0",
-    "babel-cli": "^6.7.5",
-    "babel-core": "^6.7.6",
     "babel-preset-h3x3d": "h3x3d/babel-preset-h3x3d"
+  },
+  "peerDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-runtime": "^6.6.1"
   }
 }
