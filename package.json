@@ -2,7 +2,7 @@
   "name": "container",
   "version": "1.0.0",
   "description": "Simple DI container",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
