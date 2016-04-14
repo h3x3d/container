@@ -1,0 +1,26 @@
+{
+  "name": "container",
+  "version": "1.0.0",
+  "description": "Simple DI container",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "eslintConfig": {
+    "extends": "h3x3d"
+  },
+  "babel": {
+    "presets": [
+      "babel-preset-h3x3d"      
+    ]
+  },
+  "devDependencies": {
+  	"eslint-config-h3x3d": "h3x3d/eslint-config-h3x3d",
+    "eslint": "^2.7.0",
+    "babel-cli": "^6.7.5",
+    "babel-core": "^6.7.6",
+    "babel-preset-h3x3d": "h3x3d/babel-preset-h3x3d"
+  }
+}
