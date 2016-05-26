@@ -30,7 +30,7 @@ export function Container() {
   }
 
   function fac(name) {
-    return services[name].bind(null, _this);
+    return services[name];
   }
 
   _this.get = get;
