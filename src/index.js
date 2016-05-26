@@ -29,13 +29,13 @@ export function Container() {
     services[name] = factory.bind(null, _this);
   }
 
-  function factory(name) {
-    return services[name];
+  function fac(name) {
+    return services[name].bind(null, _this);
   }
 
   _this.get = get;
   _this.set = set;
-  _this.factory = factory;
+  _this.fac = fac;
 
   return _this;
 }
