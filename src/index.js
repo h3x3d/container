@@ -16,10 +16,10 @@ export function Container() {
       const inst = services[name].apply(null, args);
 
       if (inst instanceof Promise) {
-        inst.then(res => instances[key] = res);
+        instances[key] = inst;
+      } else {
+        instances[key] = new Promise(res => res(inst));
       }
-
-      instances[key] = inst;
     }
 
     return instances[key];
