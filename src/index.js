@@ -3,26 +3,22 @@ export function Container() {
 
   const services = {};
 
-  const instances = new WeakMap();
+  const instances = new Map();
 
-  function get(name, ...args) {
-    const key = [name, ...args];
-
-    if (!instances[key]) {
-      if (!services[name]) {
-        throw new Error(`UndefinedService ${name}`);
-      }
-
-      const inst = services[name].apply(null, args);
-
-      if (inst instanceof Promise) {
-        instances[key] = inst;
-      } else {
-        instances[key] = new Promise(res => res(inst));
-      }
+  function instanciate(name, args) {
+    if (!services[name]) {
+      throw new Error(`UndefinedService ${name}`);
     }
 
-    return instances[key];
+    return Promise.resolve(services[name].apply(null, args));
+  }
+
+  function get(name, ...args) {
+    const inst = instanciate(name, args);
+    if (args.length === 0) {
+      instances.set(name, inst);
+    }
+    return inst;
   }
 
   function set(name, factory) {
