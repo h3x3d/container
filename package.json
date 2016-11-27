@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Simple DI container",
   "main": "lib/index.js",
-  "types": "lib/index.d.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "compile": "babel -d lib/ src/"
   },
