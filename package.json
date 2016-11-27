@@ -8,21 +8,8 @@
   },
   "author": "",
   "license": "ISC",
-  "eslintConfig": {
-    "extends": "h3x3d"
-  },
-  "babel": {
-    "presets": [
-      "babel-preset-h3x3d"
-    ]
-  },
   "devDependencies": {
-    "eslint-config-h3x3d": "h3x3d/eslint-config-h3x3d",
-    "babel-preset-h3x3d": "h3x3d/babel-preset-h3x3d",
-    "eslint": "^3.9.1",
-    "babel-cli": "^6.6.5"
+    "typescript": "^2.1.1"
   },
-  "peerDependencies": {
-    "babel-runtime": "^6.6.1"
-  }
+  "peerDependencies": {}
 }
