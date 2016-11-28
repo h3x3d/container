@@ -1,16 +1,15 @@
 export function Container() {
   const _this = {};
 
-  const services = {};
+  const services = new Map();
 
   const instances = new Map();
 
   function instanciate(name, args) {
-    if (!services[name]) {
-      throw new Error(`UndefinedService ${name}`);
+    if (services.has(name)) {
+      return Promise.resolve(services.get(name)(...args));
     }
-
-    return Promise.resolve(services[name].apply(null, args));
+    throw new Error(`UndefinedService ${name}`);
   }
 
   function get(name, ...args) {
@@ -27,11 +26,11 @@ export function Container() {
   }
 
   function set(name, factory) {
-    services[name] = factory.bind(null, _this);
+    services.set(name, factory.bind(null, _this));
   }
 
   function fac(name) {
-    return services[name];
+    return services.get(name);
   }
 
   _this.get = get;

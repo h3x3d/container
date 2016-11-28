@@ -4,7 +4,7 @@
   "description": "Simple DI container",
   "main": "lib/index.js",
   "scripts": {
-    "compile": "babel -d lib/ src/"
+    "compile": "babel -d lib src"
   },
   "author": "",
   "license": "ISC",
@@ -19,10 +19,7 @@
   "devDependencies": {
     "eslint-config-h3x3d": "h3x3d/eslint-config-h3x3d",
     "babel-preset-h3x3d": "h3x3d/babel-preset-h3x3d",
-    "eslint": "^3.9.1",
-    "babel-cli": "^6.6.5"
-  },
-  "peerDependencies": {
-    "babel-runtime": "^6.6.1"
+    "eslint": "^3.11.0",
+    "babel-cli": "^6.18.0"
   }
 }
